@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Bungee';
+    src: url(../CSS/FONTS/BUNGEE/Bungee-Regular.ttf);
+}
+
+body {
+   background-color: #1a1a1d;
+   color: floralwhite;
+   font-family: 'Bungee';
+   user-select: none;
+   height: 100vh;
+   overflow: hidden;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#quiz-name {
+    text-align: center;
+    text-shadow: 1px 1px 1px rgb(170, 152, 152);
+    font-size: 500%;
+    width: 54%;
+    margin: 160px auto 0 auto;
+    overflow: hidden;
+    transform-origin: left center;
+    /*position: relative;
+    top: 0px;
+    animation: fall;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-delay: 2s;*/
+}
+
+#quiz-name span {
+    color: rgb(214, 75, 75);
+}
+
+#start {
+    text-align: center;
+    padding-top: 90px;
+}
+
+#aim-icon {
+    border: solid 1px white;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 110%;
+    transition: 0.4s;
+}
+
+#aim-icon:hover {
+    transition: 0.4s;
+    color: rgb(36, 230, 36);
+    font-size: 200px;
+    background-image: linear-gradient(rgb(63, 58, 58), rgb(31, 23, 23));
+    border: none;
+}
+
+#aim-icon:active {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    background-image: linear-gradient(floralwhite, gray);
+    color: red;
+}
+
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(0, 6px, 0);
+    }
+    20%, 80% {
+        transform: translate3d(0, -4px, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(0, 5px , 0);
+    }
+    40%, 60% {
+        transform: translate3d(0, -3px , 0);
+    }
+}
+
+#social-networks {
+    position: absolute;
+    top: 5px;
+    left: 4px;
+}
+
+#social-networks a {
+    text-decoration: none;
+    color: floralwhite;
+    font-family: sans-serif;
+    background-color: blue;
+    padding: 3px 14px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+
+#social-networks #insta-follow {
+    background-color: gray;
+}
+
+#social-networks a:hover {
+    transition: 0.4s;
+    opacity: 0.8;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    font-family: serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+footer a {
+    color: floralwhite;
+}
+
+#copyright {
+    position: absolute;
+    bottom: 4px;
+    right: 2px;
+    font-family: serif;
+    opacity: 0.4;
+}
+
+@keyframes fall {
+    to {
+        top: 2300px;
+    }
+}
+
+@keyframes form {
+    from, 15% {
+        transform: rotate(0) translateX(0);
+        animation-timing-function: cubic-bezier(.07, 2.02, .67, .57);
+    }
+    50%,60% {
+        transform: rotate(90deg) translateX(0);
+        animation-timing-function: cubic-bezier(.8, .84, .82, .83);
+    }
+    85%, to{
+        transform: rotate(90deg) translateX(2100px);
+    }
+}
+/* media queries */
+
+@media only screen and (max-width: 1089px) {
+    #quiz-name {
+        width: 90%;
+        font-size: 600%;
+    }
+
+    #start {
+        font-size: 200%;
+    }
+
+    #social-networks {
+        margin: 10px 8px;
+    }
+    #social-networks a {
+        font-size: 24px;
+        border-radius: 5px;
+    }
+
+    footer {
+        height: 100px;
+    }
+
+    footer a {
+        font-size: 30px
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    #quiz-name {
+        width: 100%;
+        font-size: 378%;
+    }
+    #start {
+        font-size: 130%;
+    }
+
+    #social-networks a {
+        font-size: 20px;
+    }
+
+    footer a {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 497px) {
+    #quiz-name {
+        font-size: 360%;
+    }
+    
+    #start {
+        font-size: 110%;
+    }
+    footer #copyright {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 456px) {
+    #quiz-name {
+        font-size: 290%;
+    }
+    #aim-icon:hover {
+        font-size: 300%;
+    }
+    #aim-icon:active {
+        font-size: 300%;
+    }
+
+    #social-networks a {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 362px) {
+    #quiz-name {
+        font-size: 250%;
+    }
+}
